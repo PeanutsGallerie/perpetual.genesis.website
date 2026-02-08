@@ -6,7 +6,7 @@
 
 <title>Perpetual Genesis • Indoor Planning</title>
 
-<meta name="description" content="Perpetual Genesis is an indoor planning and inventory app designed to help growers plan indoor starts, manage preparation windows, and support successful outdoor harvests — with local-only data." />
+<meta name="description" content="Perpetual Genesis is a privacy-first planning app designed to help growers plan indoor starts, manage preparation windows, and support successful outdoor harvests — with local-only data." />
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
@@ -77,6 +77,23 @@ body {
   box-shadow: 0 10px 26px rgba(61,218,215,0.25);
 }
 
+.secondary-btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(61,218,215,0.65);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.secondary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(61,218,215,0.10);
+}
+
 section {
   max-width: 1000px;
   margin: 0 auto;
@@ -140,6 +157,44 @@ li {
   margin-bottom: 1.5rem;
 }
 
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+
+.tier-card {
+  background: linear-gradient(180deg, #14181c, #0f1215);
+  border-radius: 16px;
+  padding: 1.8rem;
+  border: 1px solid rgba(61,218,215,0.18);
+}
+
+.tier-card h3 {
+  margin-top: 0;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.tier-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  opacity: 0.9;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(61,218,215,0.35);
+  color: var(--text);
+  margin-left: 8px;
+  opacity: 0.9;
+}
+
 .privacy-wrapper {
   text-align: center;
   margin-top: 3rem;
@@ -176,19 +231,31 @@ footer {
 <body>
 
 <header class="hero">
-  <img src="Perpetual-Genesis-logo.png" alt="Perpetual Genesis" class="hero-logo" />
+  <!-- NOTE: Netlify/GitHub are case-sensitive. Ensure this filename matches your repo exactly. -->
+  <img src="perpetual-genesis-logo.png" alt="Perpetual Genesis" class="hero-logo" />
 
   <h1>Perpetual Genesis</h1>
 
   <p class="hero-subtitle">
-    Indoor planning and inventory management to support successful outdoor harvests.
+    A privacy-first planning tool for indoor starts, outdoor timing, and garden layouts — all data stays local.
   </p>
 
   <p class="hero-tagline">
-    Know when to start. Prepare with confidence. Harvest consistently.
+    Share this website to access the Free Web App. Pro versions for stores unlock everything.
   </p>
 
-  <a href="https://YOUR-APP-URL.netlify.app" class="primary-btn">Open App</a>
+  <a
+    href="https://perpetualgenesis-app.netlify.app/"
+    class="primary-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Open Free Web App
+  </a>
+
+  <a href="#versions" class="secondary-btn">
+    Free vs Pro
+  </a>
 </header>
 
 <section>
@@ -198,24 +265,63 @@ footer {
     <div class="how-item">
       <h3>Plan</h3>
       <p>
-        Build indoor timelines that account for succession planting, preparation windows,
-        and overlapping cycles — from seed start to harvest.
+        Build timelines that account for preparation windows and overlapping cycles — from seed start to harvest.
       </p>
     </div>
 
     <div class="how-item">
-      <h3>Track</h3>
+      <h3>Design</h3>
       <p>
-        Manage seeds, supplies, and plant groupings with inventory tools
-        designed to support real growing systems.
+        Use layout + spacing tools to map beds, estimate yield, and keep plans clear and repeatable.
       </p>
     </div>
 
     <div class="how-item">
-      <h3>Control</h3>
+      <h3>Track <span class="badge">Pro (Stores)</span></h3>
       <p>
-        Your data stays local, exportable, and fully under your control —
-        no accounts, no services, no lock-in.
+        Inventory tools and the Perpetual Planner are part of the Pro store versions (Google Play / Microsoft Store).
+        The Free Web App focuses on planning and layout with local-only data.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="card" id="versions">
+  <h2>Free Web App vs Pro Store App</h2>
+
+  <div class="tier-grid">
+    <div class="tier-card">
+      <h3>Free (Web)</h3>
+      <ul>
+        <li>1 bed maximum</li>
+        <li>1 plan maximum</li>
+        <li>Up to 3 crops per bed</li>
+        <li>Layout + spacing &amp; yield tools</li>
+        <li>Obstacles supported</li>
+        <li>Local storage (privacy-first)</li>
+      </ul>
+      <p class="tier-note">
+        Not included on Free Web: Inventory, Export/Print, Share Plan, Perpetual Planner.
+      </p>
+      <p class="tier-note">
+        <a href="https://perpetualgenesis-app.netlify.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none;">
+          Open the Free Web App →
+        </a>
+      </p>
+    </div>
+
+    <div class="tier-card">
+      <h3>Pro (Stores)</h3>
+      <ul>
+        <li>Full unlock of all features</li>
+        <li>Unlimited beds &amp; plans</li>
+        <li>Inventory tools</li>
+        <li>Perpetual Planner</li>
+        <li>Export / Print</li>
+        <li>Share Plan</li>
+      </ul>
+      <p class="tier-note">
+        Coming to Google Play and Microsoft Store as a paid download for v1.
       </p>
     </div>
   </div>
@@ -233,9 +339,9 @@ footer {
 <section class="card">
   <h2>Designed for Living Systems</h2>
   <ul>
-    <li>Support succession planning and companion planting over time</li>
+    <li>Support planning over time with cycles, seasons, and repeatable workflows</li>
     <li>Visualize preparation and harvest timing before problems appear</li>
-    <li>Think in seasons and cycles — not disconnected notes</li>
+    <li>Keep plans organized without cloud dependence</li>
   </ul>
 </section>
 
@@ -254,8 +360,8 @@ footer {
     <li>All data stored locally on your device</li>
     <li>No accounts, logins, or passwords</li>
     <li>No analytics, ads, or tracking</li>
-    <li>Export and import your data anytime</li>
-    <li>Designed for long-term reliability</li>
+    <li>Free Web App is intentionally limited; Pro Store App unlocks everything</li>
+    <li>You remain in control of your data (local-only workflow)</li>
   </ul>
 </section>
 
@@ -266,8 +372,16 @@ footer {
 </p>
 
 <section class="cta-section">
-  <p>Designed for growers who value timing, clarity, and control.</p>
-  <a href="https://YOUR-APP-URL.netlify.app" class="primary-btn">Launch the Web App</a>
+  <p>Share this website to access the Free Web App.</p>
+
+  <a
+    href="https://perpetualgenesis-app.netlify.app/"
+    class="primary-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Launch the Free Web App
+  </a>
 </section>
 
 <section class="privacy-wrapper">
@@ -276,7 +390,7 @@ footer {
   <div id="privacyContent" class="privacy-content">
     <p><strong>Effective:</strong> January 2026</p>
     <p>Perpetual Genesis does not collect, transmit, or store personal data.</p>
-    <p>All data remains on your device unless you explicitly export it.</p>
+    <p>All app data remains on your device unless you explicitly export it (Pro store versions).</p>
     <p>No accounts. No tracking. No third-party services.</p>
     <p>Support: support@perpetualgenesis.app</p>
   </div>
@@ -295,5 +409,7 @@ function togglePrivacy() {
 
 </body>
 </html>
+
+
 
 
